@@ -1,0 +1,101 @@
+units:
+  kx: cx
+  ky: cy
+
+  px: kx + 6
+  py: ky + 6
+
+  buff: 8
+
+  controllerW: 18.5
+  controllerH: 33.5
+  belowControllerH: 17
+  caseBorder: 1.5
+  screwThreadRadius: 0.5
+  screwPCBRadius: 4.0
+
+points:
+  zones:
+    matrix:
+      key:
+        padding: ky + 2
+        spread: kx + 2
+      columns:
+        h:
+        j:
+        k:
+          key:
+            stagger: 8
+        l:
+          key:
+            stagger: -8
+        semi:
+          key:
+            stagger: -9.5
+        apos:
+          key:
+            stagger: 9.5
+        enter:
+      rows:
+        utility:
+        down:
+        home:
+        up:
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px+.5,py+.5]
+  keys:
+    - what: rectangle
+      where: true
+      size: [14,14]
+  board:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: matrix_h_up
+          shift: [-.5px,.5py]
+        - ref: matrix_j_up
+          shift: [buff,.5py]
+        - ref: matrix_k_up
+          shift: [-.5px,.5py]
+        - ref: matrix_k_up
+          shift: [.5px,.5py]
+        - ref: matrix_l_up
+          shift: [-buff,.5py]
+        - ref: matrix_l_up
+          shift: [.5px,.5py]
+        - ref: matrix_semi_up
+          shift: [-buff,.5py]
+        - ref: matrix_semi_up
+          shift: [buff,.5py]
+        - ref: matrix_apos_up
+          shift: [-.5px,.5py]
+        - ref: matrix_enter_up
+          shift: [.5px,.5py]
+        - ref: matrix_enter_utility
+          shift: [.5px,-.5py]
+        - ref: matrix_apos_utility
+          shift: [-buff,-.5py]
+        - ref: matrix_semi_utility
+          shift: [.5px,-.5py]
+        - ref: matrix_semi_utility
+          shift: [-.5px,-.5py]
+        - ref: matrix_l_utility
+          shift: [buff,-.5py]
+        - ref: matrix_l_utility
+          shift: [-.5px,-.5py]
+        - ref: matrix_k_utility
+          shift: [buff, -.5py]
+        - ref: matrix_k_utility
+          shift: [-buff, -.5py]
+        - ref: matrix_j_utility
+          shift: [.5px,-.5py]
+        - ref: matrix_h_utility
+          shift: [-.5px,-.5py]
+  right_combo:
+    - name: board
+    - operation: subtract
+      name: keys
