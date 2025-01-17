@@ -221,7 +221,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "left.kicad_pro",
+    "filename": "numbers.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -256,83 +256,27 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P020"
+        "pattern": "P017"
       },
       {
         "netclass": "Default",
-        "pattern": "shift_utility"
+        "pattern": "first_arrows"
       },
       {
         "netclass": "Default",
-        "pattern": "shift_down"
+        "pattern": "first_one"
       },
       {
         "netclass": "Default",
-        "pattern": "shift_home"
+        "pattern": "first_four"
       },
       {
         "netclass": "Default",
-        "pattern": "shift_up"
+        "pattern": "first_seven"
       },
       {
         "netclass": "Default",
-        "pattern": "P022"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "a_utility"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "a_down"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "a_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "a_up"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P024"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "s_utility"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "s_down"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "s_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "s_up"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P100"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "d_utility"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "d_down"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "d_home"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "d_up"
+        "pattern": "first_numlock"
       },
       {
         "netclass": "Default",
@@ -340,35 +284,71 @@
       },
       {
         "netclass": "Default",
-        "pattern": "f_down"
+        "pattern": "two_arrows"
       },
       {
         "netclass": "Default",
-        "pattern": "f_home"
+        "pattern": "two_one"
       },
       {
         "netclass": "Default",
-        "pattern": "f_up"
+        "pattern": "two_four"
       },
       {
         "netclass": "Default",
-        "pattern": "P017"
+        "pattern": "two_seven"
       },
       {
         "netclass": "Default",
-        "pattern": "g_down"
+        "pattern": "two_numlock"
       },
       {
         "netclass": "Default",
-        "pattern": "g_home"
+        "pattern": "P100"
       },
       {
         "netclass": "Default",
-        "pattern": "g_up"
+        "pattern": "three_arrows"
       },
       {
         "netclass": "Default",
-        "pattern": "g_anchor"
+        "pattern": "three_one"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "three_four"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "three_seven"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "three_numlock"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P024"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "calc_arrows"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "calc_one"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "calc_four"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "calc_seven"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "calc_numlock"
       },
       {
         "netclass": "Default",
@@ -385,6 +365,10 @@
       {
         "netclass": "Default",
         "pattern": "P113"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P022"
       },
       {
         "netclass": "Default",
@@ -425,6 +409,10 @@
       {
         "netclass": "Default",
         "pattern": "P008"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "P020"
       },
       {
         "netclass": "Default",

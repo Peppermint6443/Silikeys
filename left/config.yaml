@@ -159,10 +159,6 @@ outlines:
           shift: [.5dx,-.5dy]
         - ref: matrix_shift_utility
           shift: [-.5dx,-.5dy]
-  board_test:
-    - name: board
-    - operation: subtract
-      name: raw
 pcbs:
   left:
     outlines:
@@ -195,7 +191,7 @@ pcbs:
           orientation: up
         where: 
           ref: matrix_g_up
-          shift: [-8,-3]
+          shift: [-8,-1.5]
           rotate: -180
       switch:
         what: slider

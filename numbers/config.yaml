@@ -1,0 +1,195 @@
+units:
+  kx: cx
+  ky: cy
+
+  px: kx + 2.5
+  py: ky + 2.5
+
+  dx: kx + 2
+  dy: ky + 2
+
+  controllerW: 18.5
+  controllerH: 33.5
+  belowControllerH: 17
+  caseBorder: 1.5
+  screwThreadRadius: 0.5
+  screwPCBRadius: 4.0
+
+points:
+  zones:
+    matrix:
+      key:
+        padding: ky + 2
+        spread: kx + 2
+      columns:
+        first:
+          key:
+            column_net: P017
+        two:
+          key: 
+            column_net: P011
+        three:
+          key:
+            column_net: P100
+        calc:
+          key:
+            column_net: P024
+      rows:
+        arrows:
+          row_net: P029
+        one:
+          row_net: P002
+        four:
+          row_net: P115
+        seven:
+          row_net: P113
+        numlock:
+          row_net: P022
+      anchor: 
+        shift: [100,-150]
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px - 4,py - 4]
+  keys:
+    - what: rectangle
+      where: true
+      size: [14,14]
+  board:
+    - what: polygon
+      operation: stack
+      fillet: 0
+      points:
+        - ref: matrix_first_one
+          shift: [-.5px,.5py]
+        - ref: matrix_first_numlock
+          shift: [-.5px,.5py]
+        - ref: matrix_calc_numlock
+          shift: [.5px,.5py]
+        - ref: matrix_calc_arrows
+          shift: [.5px,-.5py]
+        - ref: matrix_first_arrows
+          shift: [-.5px,-.5py]
+  numbers_combo:
+    - name: board
+    - operation: subtract
+      name: keys
+  chip:
+    - what: polygon
+      operation: stack
+
+      points:
+        - ref: matrix_first_one
+          shift: [-.5dx,.5dy]
+        - ref: matrix_first_numlock
+          shift: [-.5dx,.5dy]
+        - ref: matrix_calc_numlock
+          shift: [.5dx,.5dy]
+        - ref: matrix_calc_arrows
+          shift: [.5dx,-.5dy]
+        - ref: matrix_first_arrows
+          shift: [-.5dx,-.5dy]
+
+
+pcbs: 
+  numbers:
+    outlines:
+      main: 
+        outline: chip
+    footprints:
+      choc_hot:
+        what: choc
+        where: true
+        params:
+          keycaps: true 
+          reverse: false
+          hotswap: true 
+          from: '{{column_net}}'
+          to: '{{colrow}}'
+        adjust: 
+          rotate: 180
+      diode:
+        what: diode
+        where: true 
+        params:
+          from: '{{colrow}}'
+          to: '{{row_net}}'
+        adjust:
+          shift: [8.3,-2.5]
+          rotate: 90
+      nice_nano:
+        what: nice_nano
+        params: 
+          orientation: up
+        where: 
+          ref: matrix_first_numlock
+          shift: [8,-1.5]
+          rotate: 0
+
+      switch:
+        what: slider
+        where:
+          ref: matrix_three_numlock
+          shift: [0,.5py - 2]
+          rotate: 0
+        params: 
+          side: B
+          from: pos
+          to: RAW
+      reset_button:
+        what: EVQPUC
+        params:
+          side: B
+          from: GND
+          to: RST
+        where:
+          ref: matrix_calc_numlock
+          shift: [0,.5py - 2]
+          rotate: 0
+      battery_jack:
+        what: jstph
+        where: 
+          ref: matrix_three_four
+          shift: [4,6]
+          rotate: -90
+        params:
+          side: B
+          pos: pos
+          neg: GND
+      screw_bottom_left:
+        what: mountinghole
+        where:
+          ref: matrix_first_arrows
+          shift: [.5px,.5py - .5]
+      screw_top_left:
+        what: mountinghole
+        where:
+          ref: matrix_first_seven
+          shift: [.5px,-.5py - .5]
+      # screw_middle:
+      #   what: mountinghole
+      #   where: 
+      #     ref: matrix_l_down
+      #     shift: [.5px - 1,.5py - .5]
+      screw_bottom_right:
+        what: mountinghole
+        where: 
+          ref: matrix_calc_arrows
+          shift: [-.5px,.5py - .5]
+      screw_top_right:
+        what: mountinghole
+        where:
+          ref: matrix_calc_numlock
+          shift: [-.5px,-.5py - .5]
+      front_text:
+        what: text
+        where: &textWhere
+          ref: matrix_first_arrows
+          shift: [0,.5py - 4]
+        params: &textParams
+          text: Silikeys
+          justify: bottom
+          h_size: 3.0
+          v_size: 3.0
+          thickness: 0.4
